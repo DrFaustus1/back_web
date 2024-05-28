@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!empty($_GET['save'])) {
         print('Спасибо, результаты сохранены.');
     }
-    include('index.php');
+    include('index.html');
     exit();
 }else {
     $errors = false;
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $errors = TRUE;
     }
     if($errors) {
-        include('form.php');
+        include('index.html');
         exit();
     }
 
