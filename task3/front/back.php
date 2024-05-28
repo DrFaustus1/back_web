@@ -69,7 +69,7 @@
 			$user =  'u67424';
 			$pass ='7576191';
 
-			$db = new PDO('mysql:host=212.192.134.20;dbname=u67424', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+			$db = new PDO('mysql:host=localhost;dbname=u67424', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
       $stmt = $db->prepare("INSERT INTO DataTab (Name, Email, Birthdate, Gender, Lang_P, Lang_C, Lang_CPP, Lang_JS, Lang_PHP, Bio) VALUES (:name, :email, :date, :gender, :Lang_P, :Lang_C, :Lang_CPP, :Lang_JS, :Lang_PHP, :bio)");
       $stmt->bindParam(':name', $uName);
       $stmt->bindParam(':email', $uMail);
