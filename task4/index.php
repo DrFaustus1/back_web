@@ -180,7 +180,7 @@ $db = new PDO('mysql:host=localhost;dbname=u67424', $user, $pass, array(PDO::ATT
 // Подготовленный запрос. Не именованные метки.
 
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name = ?, email = ?, year = ?, gender = ?, bio = ?");
+  $stmt = $db->prepare("INSERT INTO FormBD SET name = ?, email = ?, year = ?, gender = ?, bio = ?");
   $stmt -> execute(array(
 		$_POST['name'],
         $_POST['email'],
