@@ -13,7 +13,7 @@ CREATE TABLE Languages6 (
 	name TEXT
 );
 
-CREATE TABLE login6 (
+CREATE TABLE login (
 	p_id int(20) unsigned NOT NULL AUTO_INCREMENT,
 	login varchar(120),
 	pass_hash varchar(255),
