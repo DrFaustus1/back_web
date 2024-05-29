@@ -217,7 +217,7 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
       <tr>
         <td><?php if(!empty($supercounter['Pascal'])) print(intval($supercounter['Pascal'][0])); else print("0");?></td>
         <td><?php if(!empty($supercounter['C'])) print(intval($supercounter['C'][0])); else print("0");?></td>
-        <td><?php if(!empty($supercounter['CPP'])) print(intval($supercounter['C'][0])); else print("0");?></td>
+        <td><?php if(!empty($supercounter['CPP'])) print(intval($supercounter['CPP'][0])); else print("0");?></td>
         <td><?php if(!empty($supercounter['Python'])) print(intval($supercounter['Python'][0])); else print("0");?></td>
       </tr>
     </table>
