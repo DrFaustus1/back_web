@@ -279,7 +279,7 @@ else {
 	$loginn = rand(1,1000);
 	$passok = rand(1,1000);
 	$pass_user = password_hash($passok, PASSWORD_DEFAULT);
-	$logpdostate = $db->prepare("INSERT INTO login6 SET p_id=:id, login=:login, pass_hash=:hash");
+	$logpdostate = $db->prepare("INSERT INTO login SET p_id=:id, login=:login, pass_hash=:hash");
 	$logpdostate->bindParam(':id',$id);
 	$logpdostate->bindParam(':login',$loginn);
 	$logpdostate->bindParam(':hash',$pass_user);

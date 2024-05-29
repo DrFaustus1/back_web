@@ -85,7 +85,7 @@ else {
       header('Location: ./login.php');
     }
 		try {
-			$stmt = $db->prepare("SELECT pass_hash, p_id FROM login6 WHERE login=:this_login");
+			$stmt = $db->prepare("SELECT pass_hash, p_id FROM login WHERE login=:this_login");
 			$stmt->bindParam(':this_login',$_POST['login']);
 			if($stmt->execute()==false) {
 				print_r($stmt->errorCode());
