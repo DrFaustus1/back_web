@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if($action == 'modify'){
    try {
       $db = connectDb();
-      $getLogin = $db->prepare("SELECT login FROM login WHERE p_id=:id");
+      $getLogin = $db->prepare("SELECT login FROM login6 WHERE p_id=:id");
       $getLogin->bindParam(':id',$id);
       if($getLogin->execute() == false){
         print_r($getLogin->errorCode());
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if($action == 'delete'){
     try {
       $db = connectDb();
-      $rmLogin = $db->prepare("DELETE FROM login WHERE p_id=:id");
+      $rmLogin = $db->prepare("DELETE FROM login6 WHERE p_id=:id");
       $rmSupers = $db->prepare("DELETE FROM Languages6 WHERE id=:id");
       $rmUsers = $db->prepare("DELETE FROM Form6DB WHERE id=:id");
       $rmLogin->bindParam(':id',$id);
@@ -132,7 +132,7 @@ session_start() && !empty($_SESSION['login']) && !empty($_SESSION['uid'])){
 }
 $pwdread = array();
 $supercounter = array();
-$admin = 'samo';
+$admin = 'mxm';
 $pwd = '1234';
 $hsh = password_hash($pwd, PASSWORD_DEFAULT);
 $allusers = null;
