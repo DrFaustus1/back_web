@@ -1,4 +1,4 @@
-CREATE TABLE Form6BD (
+CREATE TABLE Form6DB (
 	id int(20) unsigned NOT NULL AUTO_INCREMENT,
 	name varchar(120) NOT NULL DEFAULT '',
 	email varchar(120) NOT NULL,

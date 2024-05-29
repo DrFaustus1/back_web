@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 		$db = connectToDB($user,$pass);
 		try {
 			$id = $_SESSION['uid'];
-			$pdostate = $db->prepare("SELECT name,email,birthdate,sex,bio FROM Form6BD WHERE id=:id");
+			$pdostate = $db->prepare("SELECT name,email,birthdate,sex,bio FROM Form6DB WHERE id=:id");
 			$superstate = $db->prepare("SELECT name FROM Languages6 WHERE id=:id");
 			$pdostate->bindParam(':id',$id);
 			$superstate->bindParam(':id',$id);
@@ -218,7 +218,7 @@ session_start() && !empty($_SESSION['login']) && !empty($_SESSION['uid'])) {
 // TODO: перезаписать данные в БД новыми данными,
 // кроме логина и пароля.
 	try{
-		$stmt = $db->prepare("UPDATE Form6BD SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, bio=:bio WHERE id=:this_id");
+		$stmt = $db->prepare("UPDATE Form6DB SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, bio=:bio WHERE id=:this_id");
 		$stmt->bindParam(':name', $name);
 		$stmt->bindParam(':email', $email);
 		$stmt->bindParam(':birthdate', $birth);
@@ -254,7 +254,7 @@ session_start() && !empty($_SESSION['login']) && !empty($_SESSION['uid'])) {
 }
 else {
 	try {
-	$stmt = $db->prepare("INSERT INTO Form6BD SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, bio=:bio");
+	$stmt = $db->prepare("INSERT INTO Form6DB SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, bio=:bio");
 	$stmt->bindParam(':name', $name);
 	$stmt->bindParam(':email', $email);
 	$stmt->bindParam(':birthdate', $birth);
