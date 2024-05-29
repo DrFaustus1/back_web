@@ -201,7 +201,7 @@ if (empty($_POST['name'])) {
   }
 
   if ($errors) {
-    header('Location: index5.php');
+    header('Location: index.php');
     exit();
   }
   else {
@@ -301,5 +301,5 @@ if (empty($_POST['name'])) {
   }
   
   setcookie('save', '1');
-  header('Location: index5.php');
+  header('Location: index.php');
 }
