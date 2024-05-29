@@ -43,7 +43,7 @@ print("
 <table/>
 ");
 print("
-<form action='admin.php' method='POST'>
+<form action='./admin.php' method='POST'>
 <label>
   <input type='hidden' name='id' value='".$row['id']."'/>
 </label>
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       print('Error : ' . $e->getMessage());
       exit();
     }
-    header('Location: admin.php');
+    header('Location: ./admin.php');
   }
 }
 if (!empty($_COOKIE[session_name()]) &&
