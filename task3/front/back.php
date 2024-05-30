@@ -9,7 +9,7 @@
  		exit();
 	}else {
 		$errors = false;
-    /*$Langs  = $_POST['uPow'];*/
+    $Langs  = $_POST['uPow'];
     $Lang_P = in_array('Pascal', $Langs) ? 1 : 0;
     $Lang_C = in_array('C', $Langs) ? 1 : 0;
     $Lang_CPP = in_array('C++', $Langs) ? 1 : 0;
