@@ -177,7 +177,7 @@ if (empty($_POST['name'])) {
   $user = 'u67424';
 $pass = '7576191';
 $db = new PDO('mysql:host=localhost;dbname=u67424', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-// Подготовленный запрос. Не именованные метки.
+
 
 try {
   $stmt = $db->prepare("INSERT INTO FormBD SET name = ?, email = ?, year = ?, gender = ?, bio = ?");

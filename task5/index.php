@@ -279,7 +279,6 @@ if (empty($_POST['name'])) {
       );
 
       $id_db = $db->lastInsertId();
-      //реализация атомарности
       $stmt = $db->prepare("INSERT INTO Languages5 SET id = ?, languages = ?");
       foreach($_POST['super'] as $s){
           $stmt -> execute(array(

@@ -1,4 +1,4 @@
-CREATE TABLE DataTab (
+CREATE TABLE TaskData (
                          ID int(10) unsigned NOT NULL AUTO_INCREMENT,
                          Name varchar(128) NOT NULL DEFAULT '',
                          Email varchar(120) NOT NULL DEFAULT '',
