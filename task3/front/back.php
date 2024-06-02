@@ -55,8 +55,13 @@
     */
 		if(empty($_POST['uBio'])) {
 			print('Заполните Биографию.');
-			$errors = TRUE;
+			$errors = true;
 		}
+		if(empty($_POST['uCheck'])){
+			print('Поставьте галочку. ');
+			$errors = true;
+		}
+
 		if($errors) {
 			include('form.php');
 			exit();
