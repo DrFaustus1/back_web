@@ -19,6 +19,10 @@
 
 		
 		$uMailReg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
+		
+		
+		
+		if(empty($_POST['uCheck']))
 		if(empty($_POST['uBio'])){
 			print('Заполните Биографию.');
 			$errors = TRUE;
@@ -57,6 +61,7 @@
 		$uMail = $_POST['uMail'];
 		$uDate = $_POST['uDate'];
 		$uGen = $_POST['uGen'];
+		$uCheck = $_POST['$uCheck'];
 		//$uPow = $_POST['uPow'];
 		$uBio = $_POST['uBio'];
 	
