@@ -61,7 +61,6 @@
 		$uMail = $_POST['uMail'];
 		$uDate = $_POST['uDate'];
 		$uGen = $_POST['uGen'];
-		$uCheck = $_POST['$uCheck'];
 		//$uPow = $_POST['uPow'];
 		$uBio = $_POST['uBio'];
 	

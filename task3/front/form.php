@@ -55,7 +55,7 @@
 
   <div>
     <label >
-			<input type="checkbox" id="check">С контрактом согласен!
+			<input name ="uCheck" type="checkbox" id="check">С контрактом согласен!
 		</label>
 		<br/>
 	</div>
