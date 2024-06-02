@@ -17,7 +17,13 @@
     $Lang_PHP = in_array('PHP', $Langs) ? 1 : 0;
 
 
+		
 		$uMailReg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
+		if(empty($_POST['$uBio'])){
+			print('Заполните Биографию.');
+			$errors = TRUE;
+		}
+
 		if(empty($_POST['uName'])) {
 			print('Введите имя. <br/>');
 			$errors = true;
