@@ -19,7 +19,7 @@
 
 		
 		$uMailReg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
-		if(empty($_POST['$uBio'])){
+		if(empty($_POST['uBio'])){
 			print('Заполните Биографию.');
 			$errors = TRUE;
 		}
