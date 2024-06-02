@@ -26,11 +26,6 @@
 			print('Нужно согласиться с контрактом. ');
 			$errors = TRUE;
 		}
-		if(empty($_POST['uBio'])){
-			print('Заполните Биографию.');
-			$errors = TRUE;
-		}
-
 		if(empty($_POST['uName'])) {
 			print('Введите имя. <br/>');
 			$errors = TRUE;
@@ -53,7 +48,11 @@
       print('Пол введен некорректно. <br/>');
       $errors = TRUE;
     }
-
+	
+		if(empty($_POST['uBio'])){
+			print('Заполните Биографию.');
+			$errors = TRUE;
+		}
 		if($errors) {
 			include('form.php');
 			exit();
@@ -95,6 +94,13 @@
 		}
 		print_r("Succesfully added new stuff, ");
 	}
+
+
+
+
+
+
+
 
 
 ?>
