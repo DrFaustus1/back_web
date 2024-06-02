@@ -57,11 +57,6 @@
 			print('Заполните Биографию.');
 			$errors = TRUE;
 		}
-		else if(empty($_POST['uCheck'])){
-			print('Нужно согласиться с контрактом. ');
-			$errors = TRUE;
-		}
-		
 		if($errors) {
 			include('form.php');
 			exit();
