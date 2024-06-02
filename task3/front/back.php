@@ -22,37 +22,46 @@
 		
 		
 		
+		
+		if(empty($_POST['uName'])) {
+			print('Заполните Имя. <br/>');
+			$errors = true;
+		}
+		if(empty($_POST['uMail'])) {
+			print('Заполните E-mail. <br/>');
+			$errors = true;
+		}else if (!preg_match($uMailReg, $_POST['uMail'])) {
+      print('Некорректно введен E-mail. <br/>');
+      $errors = TRUE;
+    }
+		if(empty($_POST['uDate'])) {
+			print('Заполните Дату. <br/>');
+			$errors = true;
+		}
+		if (empty($_POST['uGen'])) {
+      print('Заполните Пол. <br/>');
+      $errors = TRUE;
+    } else if ($_POST['uGen'] != 1 && $_POST['uGen'] != 2) {
+      print('Некорректно введен Пол. <br/>');
+      $errors = TRUE;
+    }
+		/*if ($Langs < 1) {
+			print('<div style="color:red;margin: 5px;border:3px solid red;">Заполните поле яп.</div> <br/>');
+      $errors = TRUE;
+    } else if ($Langs != 1 && $Langs != 2 &&$Langs != 3 && $Langs != 4) {
+      print('Некорректно заполнен поле яп. <br/>');
+			$errors = TRUE;
+    }
+    */
+		if(empty($_POST['uBio'])) {
+			print('Заполните Биографию.');
+			$errors = TRUE;
+		}
 		if(empty($_POST['uCheck'])){
 			print('Нужно согласиться с контрактом. ');
 			$errors = TRUE;
 		}
-		if(empty($_POST['uName'])) {
-			print('Введите имя. <br/>');
-			$errors = TRUE;
-		}
-		if(empty($_POST['uMail'])) {
-			print('Введите E-mail. <br/>');
-			$errors = TRUE;
-		}else if (!preg_match($uMailReg, $_POST['uMail'])) {
-      print('Введен некорректный E-mail. <br/>');
-      $errors = TRUE;
-    }
-		if(empty($_POST['uDate'])) {
-			print('Введите дату. <br/>');
-			$errors = TRUE;
-		}
-		if (empty($_POST['uGen'])) {
-      print('Введите пол. <br/>');
-      $errors = TRUE;
-    } else if ($_POST['uGen'] != 1 && $_POST['uGen'] != 2) {
-      print('Пол введен некорректно. <br/>');
-      $errors = TRUE;
-    }
-	
-		if(empty($_POST['uBio'])){
-			print('Заполните Биографию.');
-			$errors = TRUE;
-		}
+		
 		if($errors) {
 			include('form.php');
 			exit();
