@@ -22,7 +22,10 @@
 		
 		
 		
-		if(empty($_POST['uCheck']))
+		if(empty($_POST['uCheck'])){
+			print('Нужно согласиться с контрактом. ');
+			$errors = TRUE;
+		}
 		if(empty($_POST['uBio'])){
 			print('Заполните Биографию.');
 			$errors = TRUE;
