@@ -57,7 +57,7 @@
 			print('Заполните Биографию.');
 			$errors = TRUE;
 		}
-		if(empty($_POST['uCheck'])){
+		else if(empty($_POST['uCheck'])){
 			print('Нужно согласиться с контрактом. ');
 			$errors = TRUE;
 		}
