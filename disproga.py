@@ -138,15 +138,13 @@ def branch_and_bound(initial_matrix):
 
     return best_assignment, best_cost
 
-# Пример использования
-if __name__ == "__main__":
-    # Пример матрицы издержек (3x3)
-    cost_matrix = [
-        [9, 2, 7],
-        [6, 4, 3],
-        [5, 8, 1]
-    ]
 
-    assignment, total_cost = branch_and_bound(cost_matrix)
-    print("Оптимальное назначение:", assignment)
-    print("Минимальная сумма издержек:", total_cost)
+cost_matrix = [
+    [9, 2, 7],
+    [6, 4, 3],
+    [5, 8, 1]
+]
+
+assignment, total_cost = branch_and_bound(cost_matrix)
+print("Оптимальное назначение:", assignment)
+print("Минимальная сумма издержек:", total_cost)
