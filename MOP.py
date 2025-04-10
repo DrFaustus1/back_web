@@ -24,14 +24,13 @@ def dichotomy_method(a, b, E, d):
 
 
 def golden_section(a, b, E):
-    k = 0
-    N = 0
+    k = 1  # Считаем, что начальные вычисления — это "нулевая" итерация
+    N = 2  # f(y) и f(z) уже посчитаны
     phi = (3 - math.sqrt(5)) / 2
     y = a + phi * (b - a)
     z = a + b - y
     fy = f(y)
     fz = f(z)
-    N += 2
 
     while b - a >= E:
         if fy <= fz:
@@ -50,16 +49,18 @@ def golden_section(a, b, E):
         k += 1
 
     x = (a + b) / 2
-    R = (0.618) ** N
+    R = (0.618) ** (N - 1)  # Поправка для R, если нужно
     return x, k, N, a, b, R
 
 
 def fibonacci_method(a, b, E):
+    # Генерируем последовательность Фибоначчи
     fib = [1, 1]
     while fib[-1] < (b - a) / E:
         fib.append(fib[-1] + fib[-2])
 
-    N = len(fib) - 1
+    N = len(fib) - 1  # Число итераций (без учёта финального шага)
+    N_calculations = 2  # Первые два вычисления f(y) и f(z)
     k = 0
 
     y = a + (fib[N - 2] / fib[N]) * (b - a)
@@ -80,23 +81,25 @@ def fibonacci_method(a, b, E):
             fy = fz
             z = a + (fib[N - k - 1] / fib[N - k]) * (b - a)
             fz = f(z)
-
+        N_calculations += 1  # +1 вычисление на каждой итерации
 
         if k == N - 2:
             print(f'Координаты перед финальным шагом: y: {y:.4f}, z: {z:.4f}')
 
-    # Финальный шаг (δ = E/10 или другая малая величина)
+    # Финальный шаг (δ = E/10)
     delta = E / 10
     z = y + delta
-    if f(y) <= f(z):
+    fz = f(z)  # +1 вычисление
+    N_calculations += 1
+
+    if fy <= fz:
         b = z
     else:
         a = y
 
     x = (a + b) / 2
     R = 1.0 / fib[N]
-    return x, N - 2, N, a, b, R
-
+    return x, N - 2, N_calculations, a, b, R
 
 # Параметры задачи
 a, b = 0.0, 10.0
