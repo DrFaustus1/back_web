@@ -55,7 +55,6 @@ def golden_section(a, b, E):
 
 
 def fibonacci_method(a, b, E):
-    # Генерация последовательности Фибоначчи без отдельной функции
     fib = [1, 1]
     while fib[-1] < (b - a) / E:
         fib.append(fib[-1] + fib[-2])
@@ -68,7 +67,7 @@ def fibonacci_method(a, b, E):
     fy = f(y)
     fz = f(z)
 
-    for k in range(1, N - 2):
+    for k in range(1, N - 1):
         if fy <= fz:
             b = z
             z = y
@@ -82,7 +81,13 @@ def fibonacci_method(a, b, E):
             z = a + (fib[N - k - 1] / fib[N - k]) * (b - a)
             fz = f(z)
 
-    z = y + 0.2  # δ = 0.2
+
+        if k == N - 2:
+            print(f'Координаты перед финальным шагом: y: {y:.4f}, z: {z:.4f}')
+
+    # Финальный шаг (δ = E/10 или другая малая величина)
+    delta = E / 10
+    z = y + delta
     if f(y) <= f(z):
         b = z
     else:
@@ -90,7 +95,7 @@ def fibonacci_method(a, b, E):
 
     x = (a + b) / 2
     R = 1.0 / fib[N]
-    return x, N - 3, N, a, b, R
+    return x, N - 2, N, a, b, R
 
 
 # Параметры задачи
